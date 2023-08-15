@@ -5,11 +5,17 @@
   "bin": {
     "wo": "./bin/which-one.js"
   },
+  "files": [
+    "bin"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "color": "echo '\\033[31m which one\\033[0m'"
   },
   "keywords": ["cli", "npm cli", "npmcli", "scripts"],
   "author": "oasis-cloud",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">= 6"
+  }
 }
