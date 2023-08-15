@@ -21,23 +21,14 @@ function loadScripts() {
   return dir.scripts
 }
 
-function filterHotKeys(hotkeys, pattern) {
-  if(!hotkeys) return []
-  return hotkeys.filter(hotkey => new RegExp(pattern, 'ig').test(hotkey.title))
-}
-
-
 (async () => {
   const scripts = loadScripts()
-  let hotkeys = Object.keys(scripts).map(hotkey => ({
+  const hotkeys = Object.keys(scripts).map(hotkey => ({
     title: hotkey,
     value: hotkey
-  }))
-  
-  if(argv.filter) {
-    hotkeys = filterHotKeys(hotkeys, argv.filter)
-  }
-
+  })).filter(hotkey => (
+    new RegExp(argv.filter || '.', 'ig').test(hotkey.title)
+  ))
   if(!hotkeys.length) {
     return
   }
