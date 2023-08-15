@@ -11,6 +11,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - use: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: release
         run: npm publish --access public
