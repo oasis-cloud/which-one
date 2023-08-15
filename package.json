@@ -1,6 +1,6 @@
 {
   "name": "@oasis-cloud/which-one",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "List the scripts in package.json and choose one to execute",
   "bin": {
     "wo": "./bin/which-one.js"
