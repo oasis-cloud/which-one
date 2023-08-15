@@ -11,7 +11,6 @@ function readPackageJson() {
 
 (async () => {
   const scripts = readPackageJson()
-  console.log(scripts)
   const scriptsShortCut = Object.keys(scripts).map(i => ({
     title: i,
     value: i
