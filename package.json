@@ -1,0 +1,15 @@
+{
+  "name": "@oasis-cloud/which-one",
+  "version": "0.0.1",
+  "description": "List the scripts in package.json and choose one to execute",
+  "bin": {
+    "wo": "./bin/which-one.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "color": "echo '\\033[31m which one\\033[0m'"
+  },
+  "keywords": ["cli", "npm cli", "npmcli", "scripts"],
+  "author": "oasis-cloud",
+  "license": "ISC"
+}
