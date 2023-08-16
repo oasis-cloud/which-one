@@ -4,7 +4,7 @@ const prompts = require('prompts')
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const path = require('path')
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
 
 const argv = yargs(hideBin(process.argv))
       .usage('Usage: $0 [options]')
@@ -41,13 +41,12 @@ function loadScripts() {
   })
 
   if(response.script) {
-    exec('npm run ' + response.script, (err, stdout, stderr) => {
-      if(err) {
-        console.log(err)
-        return
-      }
-      console.log(stdout)
-      console.log(stderr)
+    const childProcess = spawn('npm', ['run', response.script])
+    childProcess.stdout.on('data', (data) => {
+      console.log(data.toString())
+    })
+    childProcess.stderr.on('data', (data) => {
+      console.error(data.toString())
     })
   }
 })();
