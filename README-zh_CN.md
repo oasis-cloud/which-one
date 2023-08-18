@@ -8,5 +8,15 @@ npm install -D @oasis-cloud/which-one
 ```
 
 ## Example
-
-![wo](https://github.com/oasis-cloud/oss/blob/main/wo.gif?raw)
+```shell
+└─> wo 
+? which one › - Use arrow-keys. Return to submit.
+❯   test
+    color
+```
+ or
+```shell
+└─> wo color
+? which one › - Use arrow-keys. Return to submit.
+❯   color
+```
