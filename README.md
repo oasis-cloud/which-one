@@ -1,5 +1,7 @@
 # which one
-List the scripts in package.json and choose one to execute
+List the scripts in package.json and choose one to execute.
+
+Read this in other languages: [English](./README.md) | [简体中文](./README-zh_CN).md)
 
 ## Install
 
