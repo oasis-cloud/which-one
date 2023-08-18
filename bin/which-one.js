@@ -8,9 +8,9 @@ const { spawn } = require('child_process');
 
 const argv = yargs(hideBin(process.argv))
       .usage('Usage: $0 [options]')
-      .example('$0 -f build', 'filter out build-related commands')
+      .example('$0 -f @demo', 'filter out @demo related commands')
       .alias('f', 'filter')
-      .describe('f', 'filter scripts by regular expression')
+      .describe('f', 'filter packages by regular expression')
       .help('h')
       .alias('h', 'help')
       .epilog('copyright 2023')
@@ -21,14 +21,20 @@ function loadScripts() {
   return dir.scripts
 }
 
-(async () => {
+function filterScripts() {
   const scripts = loadScripts()
-  const hotkeys = Object.keys(scripts).map(hotkey => ({
+  const reg = `(${argv._.join('|')})`
+
+  return Object.keys(scripts).filter(hotkey => (
+    new RegExp(reg || '.', 'ig').test(hotkey)
+  )).map(hotkey => ({
     title: hotkey,
     value: hotkey
-  })).filter(hotkey => (
-    new RegExp(argv.filter || '.', 'ig').test(hotkey.title)
-  ))
+  }))
+}
+
+(async () => {
+  const hotkeys = filterScripts()
   if(!hotkeys.length) {
     return
   }
