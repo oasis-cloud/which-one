@@ -20,3 +20,20 @@ npm install -D @oasis-cloud/which-one
 ? which one › - Use arrow-keys. Return to submit.
 ❯   color
 ```
+
+## 正则过滤
+正则匹配采用忽略大小写的全局匹配方式进行过滤。
+
+```shell
+│which-one on  main 
+└─> wo c
+? which one › - Use arrow-keys. Return to submit.
+❯   color
+```
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+```

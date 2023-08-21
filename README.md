@@ -22,3 +22,19 @@ npm install -D @oasis-cloud/which-one
 ? which one › - Use arrow-keys. Return to submit.
 ❯   color
 ```
+## Regular Filtering
+Regular matching is filtered using global matching that ignores case.
+
+```shell
+│which-one on  main 
+└─> wo c
+? which one › - Use arrow-keys. Return to submit.
+❯   color
+```
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+```

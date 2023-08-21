@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "color": "echo '\\033[31m which one\\033[0m'"
+    "color": "echo '\\033[31m which one\\033[0m'",
+    "demo:c": "echo 'demo c'"
   },
   "keywords": [
     "cli",
@@ -18,6 +19,10 @@
     "npmcli",
     "scripts"
   ],
+  "homepage": "https://github.com/oasis-cloud/which-one",
+  "bugs": {
+    "url" : "https://github.com/oasis-cloud/which-one/issues"
+  },
   "author": "oasis-cloud",
   "license": "ISC",
   "engines": {
