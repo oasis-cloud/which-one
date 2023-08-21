@@ -17,7 +17,11 @@
     "cli",
     "npm cli",
     "npmcli",
-    "scripts"
+    "scripts",
+    "which one",
+    "list packages",
+    "oasis",
+    "oasis cloud"
   ],
   "homepage": "https://github.com/oasis-cloud/which-one",
   "bugs": {
