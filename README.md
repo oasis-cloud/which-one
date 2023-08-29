@@ -38,3 +38,21 @@ Regular matching is filtered using global matching that ignores case.
 ? which one › - Use arrow-keys. Return to submit.
 ❯   demo:c
 ```
+
+## Options
+
+### -r
+
+Supports the -r option, which executes the previous script.
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+
+# will execute demo:c
+
+│which-one on  main 
+└─> wo -r
+```

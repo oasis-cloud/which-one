@@ -37,3 +37,21 @@ npm install -D @oasis-cloud/which-one
 ? which one › - Use arrow-keys. Return to submit.
 ❯   demo:c
 ```
+
+## 选项
+
+### -r
+
+支持 -r 选项，可执行上一次的 script。
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+
+# 执行 demo:c
+
+│which-one on  main 
+└─> wo -r
+```
