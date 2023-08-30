@@ -14,11 +14,18 @@ npm install -D @oasis-cloud/which-one
 ❯   test
     color
 ```
- or
+或
 ```shell
-└─> wo color
+└─> wo c
 ? which one › - Use arrow-keys. Return to submit.
 ❯   color
+    demo:c
+
+```
+
+### 过滤脚本后只有一个脚本存在则直接执行
+```shell
+└─> wo color
 ```
 
 ## 正则过滤
@@ -36,4 +43,22 @@ npm install -D @oasis-cloud/which-one
 └─> wo 'd.*:c'
 ? which one › - Use arrow-keys. Return to submit.
 ❯   demo:c
+```
+
+## 选项
+
+### -r
+
+支持 -r 选项，可执行上一次的 script。
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+
+# 执行 demo:c
+
+│which-one on  main 
+└─> wo -r
 ```

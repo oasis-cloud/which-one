@@ -16,11 +16,18 @@ npm install -D @oasis-cloud/which-one
 ❯   test
     color
 ```
- or
+or
 ```shell
-└─> wo color
+└─> wo c
 ? which one › - Use arrow-keys. Return to submit.
 ❯   color
+    demo:c
+
+```
+
+### If only one script exists after filtering scripts, it is executed directly.
+```shell
+└─> wo color
 ```
 ## Regular Filtering
 Regular matching is filtered using global matching that ignores case.
@@ -37,4 +44,22 @@ Regular matching is filtered using global matching that ignores case.
 └─> wo 'd.*:c'
 ? which one › - Use arrow-keys. Return to submit.
 ❯   demo:c
+```
+
+## Options
+
+### -r
+
+Supports the -r option, which executes the previous script.
+
+```shell
+│which-one on  main 
+└─> wo 'd.*:c'
+? which one › - Use arrow-keys. Return to submit.
+❯   demo:c
+
+# will execute demo:c
+
+│which-one on  main 
+└─> wo -r
 ```
