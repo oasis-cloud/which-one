@@ -12,7 +12,7 @@ const homedir = os.homedir();
 const cacheDir = path.join(homedir, '.wo')
 const cache = path.join(cacheDir, 'script.json')
 
-if(!fs.existsSync(cacheDir)) {
+if (!fs.existsSync(cacheDir)) {
   fs.mkdirSync(cacheDir)
 }
 try {
@@ -90,16 +90,18 @@ function executeScript(script) {
   const hotkeys = filterScripts()
   if (!hotkeys.length) {
     return
-  }
-
-  const response = await prompts({
-    type: 'select',
-    name: 'script',
-    message: 'which one',
-    choices: hotkeys
-  })
-
-  if (response.script) {
-    executeScript(response.script)
+  } else if (hotkeys.length === 1) {
+    const [script] = hotkeys
+    return executeScript(script.value)
+  } else {
+    const response = await prompts({
+      type: 'select',
+      name: 'script',
+      message: 'which one',
+      choices: hotkeys
+    })
+    if (response.script) {
+      executeScript(response.script)
+    }
   }
 })();

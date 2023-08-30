@@ -14,11 +14,18 @@ npm install -D @oasis-cloud/which-one
 ❯   test
     color
 ```
- or
+或
 ```shell
-└─> wo color
+└─> wo c
 ? which one › - Use arrow-keys. Return to submit.
 ❯   color
+    demo:c
+
+```
+
+### 过滤脚本后只有一个脚本存在则直接执行
+```shell
+└─> wo color
 ```
 
 ## 正则过滤
